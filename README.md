@@ -30,7 +30,10 @@ configurability of Vimperator-like browsers.
     instead of the interpreter executable. This is done because Chromium
     looks for data files in the executable directory and we do not want
     to copy everything to `/usr/bin` or wherever you Perl binaries are.
-  * Run `env LD_LIBRARY_PATH=. LD_PRELOAD=$PWD/libfakexe.so FAKEXE_ORIG=/usr/bin/moar FAKEXE_REPL=$PWD/cef-test.p6 strace -fe open $PWD/cef-test.p6`.
+  * Run
+
+        env LD_LIBRARY_PATH=. LD_PRELOAD=$PWD/libfakexe.so FAKEXE_ORIG=/usr/bin/moar FAKEXE_REPL=$PWD/cef-test.p6 $PWD/cef-test.p6
+
     (you might have to adjust the path to your MoarVM executable in `FAKEXE_ORIG`, e.g. `/usr/local/bin/moar`
     for a self-compiled Rakudo).
   * This currently open a white window that doesn't do anything. But it's

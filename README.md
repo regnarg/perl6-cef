@@ -17,8 +17,12 @@ configurability of Vimperator-like browsers.
 
 ## Usage
 
-  * Download CEF from http://opensource.spotify.com/cefbuilds/index.html
-    (tested with version 3.2924.1570.g558741c)
+  * Download CEF binary build from
+    http://opensource.spotify.com/cefbuilds/index.html (tested with version
+    3.2924.1570.g558741c). Currently only Linux 64-bit builds are supported.
+    You could probably get it to work on 32b by replacing `[u]int64` with
+    `[u]int32` at the right places according to the C structure definitions
+    but I have not tested that.
   * Copy (or symlink) everything from `Release` (or `Debug`) and `Resources`
     directories to the directory of this script.
   * Build `libfakexe.so` using `make`. This is a `LD_PRELOAD` library
